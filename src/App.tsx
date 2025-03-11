@@ -4,6 +4,11 @@ import Navbar from "./components/Navbar";
 
 function App() {
   const [frameZoom, setFrameZoom] = useState(false);
+  const [activePage, setActivePage] = useState(0);
+
+  const handleNavClick = (pageIndex) => {
+    setActivePage(pageIndex);
+  };
 
   const handleZoom = () => {
     setFrameZoom(!frameZoom);
@@ -16,7 +21,7 @@ function App() {
           frameZoom && "min-w-[97vw] min-h-[97vh]"
         } w-[70vw] h-[85vh] min-w-[70vw] min-h-[85vh] max-w-[90vw] max-h-[90vh] border border-gray-300 rounded-xl resize overflow-auto transition-all duration-100 relative`}
       >
-        <Navbar />
+        <Navbar onNavClick={handleNavClick} activePage={activePage} />
         <Controls onZoom={handleZoom} frameZoom={frameZoom} />
       </div>
     </div>

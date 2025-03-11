@@ -1,4 +1,6 @@
-export default function Navbar() {
+import { navItems } from "../data";
+
+export default function Navbar({ onNavClick, activePage }) {
   return (
     <div className="2xl:w-80 xl:w-52 w-44 h-full bg-gray-200 flex flex-col justify-between pt-5 pl-6 pb-14 md:pb-0">
       <a
@@ -7,6 +9,30 @@ export default function Navbar() {
       >
         Apple Products
       </a>
+      <div className="flex flex-col flex-grow">
+        {navItems.map((navItem, index) => {
+          return (
+            <a
+              key={index}
+              href="#"
+              className="xl:w-36 lg:w-32 w-30 flex items-center justify-between my-3.5 text-left cursor-pointer"
+              onClick={() => onNavClick(index)}
+            >
+              <i className={`${navItem.icon} text-xl text-pink-400`}></i>
+              <span className="text-sm text-gray-500 mr-auto mx-2.5 tracking-wider">
+                {navItem.label}
+              </span>
+              <i
+                className={`text-lg text-yellow-400 ${
+                  activePage === index
+                    ? navItem.activeIcon
+                    : navItem.inactiveIcon
+                }`}
+              ></i>
+            </a>
+          );
+        })}
+      </div>
     </div>
   );
 }
