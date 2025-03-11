@@ -33,6 +33,20 @@ export default function Navbar({ onNavClick, activePage }) {
           );
         })}
       </div>
+      <div className="flex justify-between pr-6 pb-2">
+        <a href="#">
+          <i className="bx bxl-instagram text-2xl text-red-600"></i>
+        </a>
+        <a href="#">
+          <i className="bx bxl-twitter text-2xl text-red-600"></i>
+        </a>
+        <a href="#">
+          <i className="bx bxl-facebook text-2xl text-red-600"></i>
+        </a>
+        <a href="#">
+          <i className="bx bxl-youtube text-2xl text-red-600"></i>
+        </a>
+      </div>
     </div>
   );
 }
