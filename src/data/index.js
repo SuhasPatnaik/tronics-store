@@ -63,7 +63,7 @@ export const macbookModels = [
   {
     chip: "M2",
     price: "From $999",
-    img: "images/macbook-air-midnight-m2.jpg",
+    img: "images/macbook-air-spacegray-m2.jpg",
     colors: [
       {
         label: "Space gray",
