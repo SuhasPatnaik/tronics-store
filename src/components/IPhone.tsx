@@ -3,9 +3,9 @@ import { iphoneModels } from "../data/index";
 export default function IPhone() {
   return (
     <div className="w-full h-full flex flex-col items-center justify-around bg-white p-8">
-      <h3 className="2xl:text-4xl xl:text-3xl md:text-2xl font-semibold text-gray-800 mb-8">
+      <h1 className="2xl:text-4xl xl:text-3xl md:text-2xl font-semibold text-gray-800 mb-8">
         Which iPhone is the right one for you?
-      </h3>
+      </h1>
       <div className="flex justify-between w-full">
         {iphoneModels.map((iphone, index) => (
           <div

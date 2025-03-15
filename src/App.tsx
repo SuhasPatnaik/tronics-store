@@ -3,6 +3,7 @@ import Controls from "./components/Controls";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import IPhone from "./components/IPhone";
+import MacBook from "./components/MacBook";
 
 function App() {
   const [frameZoom, setFrameZoom] = useState(false);
@@ -27,7 +28,8 @@ function App() {
         <Controls onZoom={handleZoom} frameZoom={frameZoom} />
         <div className="flex-grow">
           {/* <Home /> */}
-          <IPhone />
+          {/* <IPhone /> */}
+          <MacBook />
         </div>
       </div>
     </div>
