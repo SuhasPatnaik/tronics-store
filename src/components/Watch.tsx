@@ -13,7 +13,6 @@ export default function Watch() {
             <img src={watch.imgs[0]} alt={watch.name} className="absolute w-full h-full object-contain opacity-100 group-hover:opacity-0 transition duration-300" />
             <img src={watch.imgs[1]} alt={watch.name} className="absolute w-full h-full object-contain opacity-0 group-hover:opacity-100 transition duration-300" />
           </div>
-          
           <h3 className="2xl:text-xl xl:text-lg text-sm font-semibold">{watch.name}</h3>
           <a href="#" className="my-2 text-base text-blue-400">{watch.price}</a>
           <div className="md:text-sm text-xs text-gray-700 my-2">
