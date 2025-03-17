@@ -16,7 +16,7 @@ export default function MacBook() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-around bg-white p-8">
+    <div className="h-full flex flex-col items-center sm:gap-12 lg:gap-0 bg-white p-8">
       <h1 className="2xl:text-4xl xl:text-3xl md:text-2xl font-semibold text-gray-800 mb-8">
         Choose your new MacBook Air
       </h1>
@@ -53,7 +53,7 @@ export default function MacBook() {
           <img
             src={currentColor.img}
             alt={`Macbook Air with ${currentModel.chip}`}
-            className="2xl:w-72 xl:w-52 w-48 h-full 2xl:mt-0 sm:mt-6"
+            className="2xl:w-72 xl:w-52 w-48 h-full 2xl:mt-0 sm:mt-6 m-auto"
           />
           <span className="2xl:text-lg xl:text-sm font-medium text-gray-800 mb-2 text-center md:text-left">
             {currentColor.label}

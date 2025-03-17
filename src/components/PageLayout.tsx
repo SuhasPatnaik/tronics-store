@@ -1,12 +1,13 @@
 import { Outlet, useNavigate } from "react-router";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Controls from "./Controls";
 
 export default function PageLayout() {
   const [frameZoom, setFrameZoom] = useState(false);
   const [activePage, setActivePage] = useState(0);
+
   const navigate = useNavigate();
 
   const handleNavClick = (pageIndex) => {
@@ -34,6 +35,7 @@ export default function PageLayout() {
           onZoom={handleZoom}
           frameZoom={frameZoom}
           onClose={handleResetPage}
+          activePage={activePage}
         />
         <div className="flex-grow">
           <Outlet />
