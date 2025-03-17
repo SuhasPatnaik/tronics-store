@@ -1,4 +1,4 @@
-import { iphoneModels } from "../data/index";
+import { iphoneModels } from "../data";
 
 export default function IPhone() {
   return (

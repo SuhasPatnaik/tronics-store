@@ -37,7 +37,6 @@ export default function IMac() {
               style={{ backgroundColor: model.bg }}
               onClick={() => {
                 setSelectedColor(model.label.toLowerCase());
-                setVisibleLabel(model.label);
               }}
               className={`2xl:w-6 md:w-5 w-4 2xl:h-6 md:h-5 h-4 rounded-full flex items-center justify-center ${
                 selectedColor === model.label.toLowerCase() &&

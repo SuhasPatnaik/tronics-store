@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { navItems } from "../data";
 
 export default function Navbar({ onNavClick, activePage }) {
@@ -12,9 +13,13 @@ export default function Navbar({ onNavClick, activePage }) {
       <div className="flex flex-col flex-grow">
         {navItems.map((navItem, index) => {
           return (
-            <a
+            <Link
               key={index}
-              href="#"
+              to={`${
+                navItem.label.toLowerCase() === "home"
+                  ? "/store"
+                  : `/shop/buy-${navItem.label.toLowerCase()}`
+              }`}
               className="xl:w-36 lg:w-32 w-30 flex items-center justify-between my-3.5 text-left cursor-pointer"
               onClick={() => onNavClick(index)}
             >
@@ -29,7 +34,7 @@ export default function Navbar({ onNavClick, activePage }) {
                     : navItem.inactiveIcon
                 }`}
               ></i>
-            </a>
+            </Link>
           );
         })}
       </div>
