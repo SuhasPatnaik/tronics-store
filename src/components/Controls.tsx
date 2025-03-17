@@ -6,7 +6,7 @@ export default function Controls({ onZoom, frameZoom, onClose, activePage }) {
   return (
     <div className="absolute top-3 right-3 space-x-2 z-10">
       <button
-        className="text-2xl text-pink-400 cursor-pointer hidden lg:block"
+        className="text-2xl text-pink-400 cursor-pointer hidden lg:inline"
         onClick={onZoom}
       >
         <i className={frameZoom ? "bx bxs-zoom-out" : "bx bxs-zoom-in"}></i>

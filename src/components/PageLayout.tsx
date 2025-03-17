@@ -7,6 +7,18 @@ import Controls from "./Controls";
 export default function PageLayout() {
   const [frameZoom, setFrameZoom] = useState(false);
   const [activePage, setActivePage] = useState(0);
+  const [isLgScreen, setIsLgScreen] = useState(window.innerWidth > 1024);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLgScreen(window.innerWidth >= 1024);
+      if (window.innerWidth < 1024) {
+        setFrameZoom(true);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const navigate = useNavigate();
 
@@ -15,7 +27,9 @@ export default function PageLayout() {
   };
 
   const handleZoom = () => {
-    setFrameZoom(!frameZoom);
+    if (isLgScreen) {
+      setFrameZoom(!frameZoom);
+    }
   };
 
   const handleResetPage = () => {
