@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router";
 import Home from "./components/Home";
 import IPhone from "./components/IPhone";
 import MacBook from "./components/MacBook";
@@ -11,6 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Navigate to="/store" replace />} />
         <Route element={<PageLayout />}>
           <Route path="/store" element={<Home />} />
           <Route path="/shop/buy-iphone" element={<IPhone />} />

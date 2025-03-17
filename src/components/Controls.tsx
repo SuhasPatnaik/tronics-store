@@ -2,16 +2,16 @@
  * Component to zoom in and zoom out
  */
 
-export default function Controls({ onZoom, frameZoom }) {
+export default function Controls({ onZoom, frameZoom, onClose }) {
   return (
-    <div className="absolute top-3 right-3 space-x-2">
+    <div className="absolute top-3 right-3 space-x-2 z-10">
       <button
         className="text-2xl text-pink-400 cursor-pointer"
         onClick={onZoom}
       >
         <i className={frameZoom ? "bx bxs-zoom-out" : "bx bxs-zoom-in"}></i>
       </button>
-      <button className="text-2xl text-pink-400">
+      <button className="text-2xl text-pink-400" onClick={onClose}>
         <i className="bx bx-x-circle"></i>
       </button>
     </div>
