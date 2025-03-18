@@ -1,7 +1,10 @@
 import { Link } from "react-router";
 import { items } from "../data";
+import { useAppContext } from "./AppContext";
 
 export default function Home() {
+  const { onNavClick } = useAppContext();
+
   return (
     <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-4 bg-gray-50">
       {items.map((item, index) => (
@@ -15,7 +18,7 @@ export default function Home() {
           <Link
             to={`/shop/buy-${item.label.toLowerCase().split(" ").pop()}`}
             className="contents"
-            onClick={() => console.log("Link clicked from home page")}
+            onClick={() => onNavClick(item.pageIndex)}
           >
             <img
               src={item.img}

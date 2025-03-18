@@ -1,12 +1,28 @@
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import { navItems } from "../data";
+import { useEffect } from "react";
+import { useAppContext } from "./AppContext";
 
-export default function Navbar({
-  onNavClick,
-  activePage,
-  isNavbarOpen,
-  toggleNavbar,
-}) {
+export default function Navbar() {
+  const { activePage, setActivePage, isNavbarOpen, toggleNavbar, onNavClick } =
+    useAppContext();
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const currentIndex = navItems.findIndex((navItem) => {
+      const expectedPath =
+        navItem.label.toLowerCase() === "home"
+          ? "/store"
+          : `/shop/buy-${navItem.label.toLowerCase()}`;
+      return location.pathname === expectedPath;
+    });
+
+    if (currentIndex !== -1) {
+      setActivePage(currentIndex);
+    }
+  }, [location.pathname]);
+
   return (
     <>
       <div

@@ -2,7 +2,11 @@
  * Component to zoom in and zoom out
  */
 
-export default function Controls({ onZoom, frameZoom, onClose, activePage }) {
+import { useAppContext } from "./AppContext";
+
+export default function Controls() {
+  const { onZoom, frameZoom, onClose, activePage } = useAppContext();
+
   return (
     <div className="absolute top-3 right-3 space-x-2 z-10">
       <button
