@@ -31,7 +31,7 @@ export default function Navbar() {
   return (
     <>
       <div
-        className={`2xl:w-80 xl:w-52 w-44 h-full bg-gray-200 flex flex-shrink-0 flex-col justify-between pt-5 px-6 pb-14 md:pb-0 absolute md:relative z-10 transition-transform duration-300 ${
+        className={`2xl:w-80 xl:w-52 w-44 h-full bg-gray-200 flex flex-shrink-0 flex-col justify-between md:pt-5 pt-12 px-6 pb-14 md:pb-0 absolute md:relative z-10 transition-transform duration-300 ${
           isNavbarOpen ? "translate-x-0" : "-translate-x-110 md:-translate-x-0"
         }`}
       >
@@ -85,7 +85,7 @@ export default function Navbar() {
         </div>
       </div>
       <button
-        className="fixed md:hidden bottom-4 left-4 p-2 text-4xl text-blue-400 z-30"
+        className="fixed md:hidden p-2 text-4xl text-blue-400 z-30"
         onClick={() => toggleNavbar()}
       >
         {isNavbarOpen ? (
