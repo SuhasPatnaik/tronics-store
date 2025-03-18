@@ -37,7 +37,7 @@ export default function Watch() {
                 </span>
               ))}
             </div>
-            <button className="w-min text-sm mt-4 py-1 px-2 bg-blue-400 rounded-full text-white">
+            <button className="w-min text-sm mt-4 py-1 px-2 bg-blue-400 rounded-full text-white cursor-pointer">
               Shop
             </button>
           </div>

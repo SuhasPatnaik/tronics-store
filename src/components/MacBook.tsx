@@ -55,7 +55,7 @@ export default function MacBook() {
             alt={`Macbook Air with ${currentModel.chip}`}
             className="2xl:w-72 xl:w-52 w-48 h-full 2xl:mt-0 sm:mt-6 m-auto"
           />
-          <span className="2xl:text-lg xl:text-sm font-medium text-gray-800 mb-2 block text-center md:text-center">
+          <span className="2xl:text-lg xl:text-sm font-medium text-gray-800 mb-2 block text-center md:text-left">
             {currentColor.label}
           </span>
           <div className="flex space-x-2 mb-4 md:text-left justify-center md:justify-start">
@@ -75,7 +75,7 @@ export default function MacBook() {
           <img
             src={currentModel.icon}
             alt={`Apple ${currentModel.chip} icon`}
-            className="w-12 h-12 xl:mb-2 inline-block mb-4"
+            className="w-12 h-12 xl:mb-2 inline-block mb-4 md:block"
           />
           <div className="2xl:mb-4 xl:mb-2 text-center md:text-left">
             {currentModel.specs.map((spec, index) => (
@@ -89,7 +89,7 @@ export default function MacBook() {
           </div>
           <button
             type="button"
-            className="w-min text-sm py-1 px-3 bg-blue-400 rounded-full text-white mt-4 md:mt-0"
+            className="w-min text-sm py-1 px-3 bg-blue-400 rounded-full text-white mt-4 md:mt-0 cursor-pointer"
           >
             Buy
           </button>
