@@ -3,7 +3,7 @@ import { items } from "../data";
 import { useAppContext } from "./AppContext";
 
 export default function Home() {
-  const { onNavClick } = useAppContext();
+  const { handleNavClick } = useAppContext();
 
   return (
     <div className="w-full h-full grid grid-cols-2 grid-rows-2 gap-4 bg-gray-50">
@@ -18,7 +18,7 @@ export default function Home() {
           <Link
             to={`/shop/buy-${item.label.toLowerCase().split(" ").pop()}`}
             className="contents"
-            onClick={() => onNavClick(item.pageIndex)}
+            onClick={() => handleNavClick(item.pageIndex)}
           >
             <img
               src={item.img}

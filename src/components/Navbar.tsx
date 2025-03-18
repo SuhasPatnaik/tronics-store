@@ -4,8 +4,13 @@ import { useEffect } from "react";
 import { useAppContext } from "./AppContext";
 
 export default function Navbar() {
-  const { activePage, setActivePage, isNavbarOpen, toggleNavbar, onNavClick } =
-    useAppContext();
+  const {
+    activePage,
+    setActivePage,
+    isNavbarOpen,
+    toggleNavbar,
+    handleNavClick,
+  } = useAppContext();
 
   const location = useLocation();
 
@@ -47,7 +52,7 @@ export default function Navbar() {
                     : `/shop/buy-${navItem.label.toLowerCase()}`
                 }`}
                 className="xl:w-36 lg:w-32 w-30 flex items-center justify-between my-3.5 text-left cursor-pointer"
-                onClick={() => onNavClick(index)}
+                onClick={() => handleNavClick(index)}
               >
                 <i className={`${navItem.icon} text-xl text-pink-400`}></i>
                 <span className="text-sm text-gray-500 mr-auto mx-2.5 tracking-wider">

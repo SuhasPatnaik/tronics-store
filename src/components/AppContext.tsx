@@ -1,18 +1,41 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
+import { useNavigate } from "react-router";
 
-const AppContext = createContext();
+type AppContextType = {
+  frameZoom: boolean;
+  setFrameZoom: (frameZoom: boolean) => void;
+  handleResetPage?: () => void;
+  activePage: number;
+  setActivePage: (activePage: number) => void;
+  isLgScreen: boolean;
+  setIsLgScreen: (isLgScreen: boolean) => void;
+  isNavbarOpen: boolean;
+  handleNavClick: (pageIndex: number) => void;
+  handleZoom: () => void;
+  toggleNavbar: () => void;
+};
+
+const AppContext = createContext<AppContextType | null>(null);
 
 export function useAppContext() {
-  return useContext(AppContext);
+  const context = useContext(AppContext);
+  if (!context) {
+    throw new Error("useAppContext must be used within an AppProvider");
+  }
+  return context;
 }
 
-export function AppProvider({ children }) {
+type AppProviderProps = {
+  children: ReactNode;
+};
+
+export function AppProvider({ children }: AppProviderProps) {
   const [frameZoom, setFrameZoom] = useState(false);
   const [activePage, setActivePage] = useState(0);
   const [isLgScreen, setIsLgScreen] = useState(window.innerWidth > 1024);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
-  const handleNavClick = (pageIndex) => {
+  const handleNavClick = (pageIndex: number) => {
     setActivePage(pageIndex);
     setIsNavbarOpen(!isNavbarOpen);
   };
@@ -25,6 +48,13 @@ export function AppProvider({ children }) {
 
   const toggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
+  };
+
+  const navigate = useNavigate();
+
+  const handleResetPage = () => {
+    setActivePage(0);
+    navigate("/store");
   };
 
   return (
@@ -40,6 +70,7 @@ export function AppProvider({ children }) {
         handleNavClick,
         handleZoom,
         toggleNavbar,
+        handleResetPage,
       }}
     >
       {children}

@@ -1,4 +1,4 @@
-import { Outlet, useNavigate } from "react-router";
+import { Outlet } from "react-router";
 import { useEffect } from "react";
 
 import Navbar from "./Navbar";
@@ -6,17 +6,7 @@ import Controls from "./Controls";
 import { useAppContext } from "./AppContext";
 
 export default function PageLayout() {
-  const {
-    frameZoom,
-    setFrameZoom,
-    handleZoom,
-    activePage,
-    setActivePage,
-    setIsLgScreen,
-    handleNavClick,
-    isNavbarOpen,
-    toggleNavbar,
-  } = useAppContext();
+  const { frameZoom, setFrameZoom, setIsLgScreen } = useAppContext();
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,13 +19,6 @@ export default function PageLayout() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const navigate = useNavigate();
-
-  const handleResetPage = () => {
-    setActivePage(0);
-    navigate("/store");
-  };
 
   return (
     <div className="w-full h-screen grid place-items-center">

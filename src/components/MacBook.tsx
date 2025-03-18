@@ -10,7 +10,7 @@ export default function MacBook() {
   const currentModel = macbookModels[selectedChipIndex];
   const currentColor = currentModel.colors[selectedColorIndex];
 
-  const handleChipSelect = (index) => {
+  const handleChipSelect = (index: number) => {
     setSelectedChipIndex(index);
     setSelectedColorIndex(0);
   };
