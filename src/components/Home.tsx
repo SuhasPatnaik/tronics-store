@@ -13,8 +13,9 @@ export default function Home() {
             {item.label}
           </span>
           <Link
-            to={`/shop/buy-${item.label.toLowerCase()}`}
+            to={`/shop/buy-${item.label.toLowerCase().split(" ").pop()}`}
             className="contents"
+            onClick={() => console.log("Link clicked from home page")}
           >
             <img
               src={item.img}

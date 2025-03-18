@@ -8,6 +8,7 @@ export default function PageLayout() {
   const [frameZoom, setFrameZoom] = useState(false);
   const [activePage, setActivePage] = useState(0);
   const [isLgScreen, setIsLgScreen] = useState(window.innerWidth > 1024);
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -16,6 +17,7 @@ export default function PageLayout() {
         setFrameZoom(true);
       }
     };
+    handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -24,6 +26,7 @@ export default function PageLayout() {
 
   const handleNavClick = (pageIndex) => {
     setActivePage(pageIndex);
+    setIsNavbarOpen(!isNavbarOpen);
   };
 
   const handleZoom = () => {
@@ -37,6 +40,10 @@ export default function PageLayout() {
     navigate("/store");
   };
 
+  const toggleNavbar = () => {
+    setIsNavbarOpen(!isNavbarOpen);
+  };
+
   return (
     <div className="w-full h-screen grid place-items-center">
       <div
@@ -44,7 +51,12 @@ export default function PageLayout() {
           frameZoom && "min-w-[97vw] min-h-[97vh]"
         } w-[70vw] h-[85vh] min-w-[70vw] min-h-[85vh] max-w-[90vw] max-h-[90vh] border border-gray-300 rounded-xl resize overflow-auto relative transition-all duration-100 flex`}
       >
-        <Navbar onNavClick={handleNavClick} activePage={activePage} />
+        <Navbar
+          onNavClick={handleNavClick}
+          activePage={activePage}
+          isNavbarOpen={isNavbarOpen}
+          toggleNavbar={toggleNavbar}
+        />
         <Controls
           onZoom={handleZoom}
           frameZoom={frameZoom}

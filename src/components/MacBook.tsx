@@ -17,7 +17,7 @@ export default function MacBook() {
 
   return (
     <div className="h-full flex flex-col items-center sm:gap-12 lg:gap-0 bg-white p-8">
-      <h1 className="2xl:text-4xl xl:text-3xl md:text-2xl font-semibold text-gray-800 mb-8">
+      <h1 className="2xl:text-4xl xl:text-3xl text-2xl text-center font-semibold text-gray-800 mb-8">
         Choose your new MacBook Air
       </h1>
       <div className="flex">
@@ -49,13 +49,13 @@ export default function MacBook() {
         ))}
       </div>
       <div className="flex flex-col 2xl:p-4 md:items-start items-center">
-        <div className="w-80 h-64 2xl:mb-0 mb-8">
+        <div className="w-80 h-64 2xl:mb-0 mb-8 text-center">
           <img
             src={currentColor.img}
             alt={`Macbook Air with ${currentModel.chip}`}
             className="2xl:w-72 xl:w-52 w-48 h-full 2xl:mt-0 sm:mt-6 m-auto"
           />
-          <span className="2xl:text-lg xl:text-sm font-medium text-gray-800 mb-2 text-center md:text-left">
+          <span className="2xl:text-lg xl:text-sm font-medium text-gray-800 mb-2 block text-center md:text-center">
             {currentColor.label}
           </span>
           <div className="flex space-x-2 mb-4 md:text-left justify-center md:justify-start">
@@ -75,7 +75,7 @@ export default function MacBook() {
           <img
             src={currentModel.icon}
             alt={`Apple ${currentModel.chip} icon`}
-            className="w-12 h-12 xl:mb-2"
+            className="w-12 h-12 xl:mb-2 inline-block mb-4"
           />
           <div className="2xl:mb-4 xl:mb-2 text-center md:text-left">
             {currentModel.specs.map((spec, index) => (

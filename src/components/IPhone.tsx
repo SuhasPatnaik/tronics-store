@@ -2,8 +2,8 @@ import { iphoneModels } from "../data";
 
 export default function IPhone() {
   return (
-    <div className="w-full h-full flex flex-col items-center justify-around bg-white p-8">
-      <h1 className="2xl:text-4xl xl:text-3xl md:text-2xl font-semibold text-gray-800 mb-8">
+    <div className="w-full h-full flex flex-col items-center md:justify-around bg-white p-8 justify-center">
+      <h1 className="2xl:text-4xl xl:text-3xl text-2xl font-semibold text-gray-800 mb-8 text-center">
         Which iPhone is the right one for you?
       </h1>
       <div className="flex justify-between w-full">

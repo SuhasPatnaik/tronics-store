@@ -2,8 +2,8 @@ import { watchModels } from "../data";
 
 export default function Watch() {
   return (
-    <div className="flex flex-col items-center justify-around bg-white h-full py-8 px-4">
-      <h1 className="2xl:text-4xl xl:text-3xl md:text-2xl font-semibold text-gray-800 mb-8">
+    <div className="flex flex-col items-center md:justify-around bg-white h-full py-8 px-4 justify-center">
+      <h1 className="2xl:text-4xl xl:text-3xl text-2xl font-semibold text-gray-800 mb-8">
         Find the watch that's right for you
       </h1>
       <div className="w-full flex justify-around">
